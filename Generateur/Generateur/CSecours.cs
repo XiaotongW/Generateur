@@ -7,7 +7,7 @@ using System.Xml.Serialization;
 
 namespace Generateur
 {
-	class CSecours :CAeronef
+	public class CSecours :CAeronef
 	{
 		public CSecours()
 		{
@@ -15,7 +15,14 @@ namespace Generateur
 		}
 		public CSecours(string Nom, int Vitesse, int Entretient, int Capacite) : base(Nom, Vitesse, Entretient, Capacite)
 		{
-
+			
+		}
+		public override string ToString()
+		{
+			return string.Format(
+				"{0} (Passager), Capacité : {1}, Vitesse : {2}, entretient {3}",
+				new object[] { this.Nom, this.Capacite, this.vitesse, this.entretient }
+			);
 		}
 	}
 }

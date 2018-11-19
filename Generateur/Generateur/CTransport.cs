@@ -7,7 +7,7 @@ using System.Xml.Serialization;
 
 namespace Generateur
 {
-	class CTransport : CAeronef
+	public abstract class CTransport : CAeronef
 	{
 		protected int Embarquement;
 		protected int Debarquement;
@@ -19,6 +19,18 @@ namespace Generateur
 		{
 			this.Embarquement = Embarquement;
 			this.Debarquement = Debarquement;
+		}
+
+		public int embarquement
+		{
+			get { return Embarquement; }
+			set { Embarquement = value; }
+		}
+
+		public int debarquement
+		{
+			get { return Debarquement; }
+			set { Debarquement = value; }
 		}
 	}
 }
