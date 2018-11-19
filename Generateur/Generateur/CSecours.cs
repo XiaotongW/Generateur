@@ -7,9 +7,13 @@ using System.Xml.Serialization;
 
 namespace Generateur
 {
-	public class CUsineAeronef : CAeronef
+	class CSecours :CAeronef
 	{
-		public CUsineAeronef()
+		public CSecours()
+		{
+
+		}
+		public CSecours(string Nom, int Vitesse, int Entretient, int Capacite) : base(Nom, Vitesse, Entretient, Capacite)
 		{
 
 		}
