@@ -45,6 +45,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CAeronef.cs" />
+    <Compile Include="CAeroport.cs" />
+    <Compile Include="CCargo.cs" />
+    <Compile Include="CCiterne.cs" />
+    <Compile Include="CLoisir.cs" />
+    <Compile Include="CPassager.cs" />
+    <Compile Include="CSecours.cs" />
+    <Compile Include="CTransport.cs" />
+    <Compile Include="CUsineAeronef.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
