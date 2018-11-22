@@ -41,5 +41,10 @@ namespace Generateur
         {
             //m_scenario.ajouterAeroport(nom, ville, posX, posY, minPass, maxPass, minCargo, maxCargo);
         }
+
+        public void ajouterAeronef(string modele, int capacite, string type, int vitesse, int embarquement, int debarquement, int maintenance)
+        {
+            //m_scenario.ajouterAeronef(modele, capacite, type, vitesse, embarquement, debarquement, maintenance);
+        }
     }
 }

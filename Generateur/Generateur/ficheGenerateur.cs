@@ -32,6 +32,7 @@ namespace Generateur
         }
 
         private void ajouterAeroport()
+        //Ajouter un aéroport dans le scenario
         {
             string nomAeroport;
             string villeAeroport;
@@ -92,12 +93,79 @@ namespace Generateur
 
         }
 
+        private void ajouterAeronef()
+        //Ajout un aéronef dans un aéroport du scenario
+        {
+            string modeleAeronef;
+            int capaciteAeronef;
+            string typeAeronef;
+            int vitesseAeronef;
+            int embarquementAeronef;
+            int debarquementAeronef;
+            int maintenanceAeronef;
+
+            if (txtModeleAeronef.Text != "")
+            {
+                modeleAeronef = txtNomAeroport.Text;
+            }
+            else
+            {
+                MessageBox.Show("Entrer un modèle pour l'aéronef");
+                modeleAeronef = "";
+            }
+
+            if (txtCapaciteAeronef.Text != "")
+            {
+                capaciteAeronef = Convert.ToInt32(txtCapaciteAeronef.Text);
+            }
+            else
+            {
+                MessageBox.Show("Entrer la capacité de l'aéronef");
+                capaciteAeronef = -1;
+            }
+
+            if (cmbTypeAeronef.Text != "")
+            {
+                typeAeronef = cmbTypeAeronef.Text;
+            }
+            else
+            {
+                MessageBox.Show("Choisir un type pour l'aéronef");
+                typeAeronef = "";
+            }
+
+            vitesseAeronef = selVitesseAeronef.Value;
+            embarquementAeronef = selEmbarquementAeronef.Value;
+            debarquementAeronef = selDebarquementAeronef.Value;
+            maintenanceAeronef = selEntretienAeronef.Value;
+
+            if (modeleAeronef != "" && typeAeronef != "" && capaciteAeronef != -1)
+            {
+                //m_generateur.ajouterAeronef(modeleAeronef, capaciteAeronef, typeAeronef, vitesseAeronef, embarquementAeronef, debarquementAeronef, maintenanceAeronef);
+            }
+        }
+
+        private void filtrerEntree(KeyPressEventArgs e)
+        {
+            //Vérifier que l'entrée dans la boîte de texte est un chiffre
+            if ((!char.IsDigit(e.KeyChar)) && (!char.IsControl(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
+
+            else
+            {
+                e.Handled = false;
+            }
+        }
+
         private void etqEmbarquementAeronef_Click(object sender, EventArgs e)
         {
 
         }
 
         private void cmdPositionAeroport_Click(object sender, EventArgs e)
+        //Afficher le dialogue de selection de la position d'un aéroport
         {
             m_carte = new ficheCarte();
 
@@ -107,6 +175,21 @@ namespace Generateur
         private void cmdAjouterAeroport_Click(object sender, EventArgs e)
         {
             ajouterAeroport();
+        }
+
+        private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void txtCapaciteAeronef_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            filtrerEntree(e);
+        }
+
+        private void cmdAjouterAeronef_Click(object sender, EventArgs e)
+        {
+            ajouterAeronef();
         }
     }
 }
