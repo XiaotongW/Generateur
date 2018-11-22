@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Generateur
 {
@@ -66,6 +67,11 @@ namespace Generateur
 		public void RetierAeronef (CAeronef Aeronef)
 		{
 			Aeronefs.RemoveAt(Aeronefs.FindIndex(e => e == Aeronef));
+		}
+
+		public override string ToString()
+		{
+			return string.Format("{0} ({1} N, {2} O), Min Passager : {3}, Max Passager : {4}, Min Marchandise : {5}, Max Marchandise : {6}", new object[] {nom, 0,0,this.MinPassager,this.MaxPassager,this.MinCargo,this.MaxCargo }); 
 		}
 	}
 }
