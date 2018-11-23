@@ -68,6 +68,9 @@
     </Compile>
     <Compile Include="Generateur.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ficheCarte.resx">
+      <DependentUpon>ficheCarte.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ficheGenerateur.resx">
       <DependentUpon>ficheGenerateur.cs</DependentUpon>
     </EmbeddedResource>
