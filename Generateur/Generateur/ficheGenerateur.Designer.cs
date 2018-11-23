@@ -30,6 +30,7 @@
         {
             this.tabCreation = new System.Windows.Forms.TabControl();
             this.ongAeroport = new System.Windows.Forms.TabPage();
+            this.cmdSupprimerAeroport = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.cmdAjouterAeroport = new System.Windows.Forms.Button();
             this.etqMaxCargo = new System.Windows.Forms.Label();
@@ -47,6 +48,7 @@
             this.txtNomAeroport = new System.Windows.Forms.TextBox();
             this.lstAeroport = new System.Windows.Forms.ListBox();
             this.ongAeronef = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.etqEntretienAeronef = new System.Windows.Forms.Label();
             this.selEntretienAeronef = new System.Windows.Forms.TrackBar();
             this.etqDebarquementAeronef = new System.Windows.Forms.Label();
@@ -56,7 +58,7 @@
             this.etqVitesseAeronef = new System.Windows.Forms.Label();
             this.selVitesseAeronef = new System.Windows.Forms.TrackBar();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbTypeAeronef = new System.Windows.Forms.ComboBox();
             this.etqCapaciteAeronef = new System.Windows.Forms.Label();
             this.txtCapaciteAeronef = new System.Windows.Forms.TextBox();
             this.etqModeleAeronef = new System.Windows.Forms.Label();
@@ -96,6 +98,7 @@
             // 
             // ongAeroport
             // 
+            this.ongAeroport.Controls.Add(this.cmdSupprimerAeroport);
             this.ongAeroport.Controls.Add(this.button2);
             this.ongAeroport.Controls.Add(this.cmdAjouterAeroport);
             this.ongAeroport.Controls.Add(this.etqMaxCargo);
@@ -120,6 +123,15 @@
             this.ongAeroport.Text = "Aéroports";
             this.ongAeroport.UseVisualStyleBackColor = true;
             // 
+            // cmdSupprimerAeroport
+            // 
+            this.cmdSupprimerAeroport.Location = new System.Drawing.Point(60, 302);
+            this.cmdSupprimerAeroport.Name = "cmdSupprimerAeroport";
+            this.cmdSupprimerAeroport.Size = new System.Drawing.Size(66, 23);
+            this.cmdSupprimerAeroport.TabIndex = 19;
+            this.cmdSupprimerAeroport.Text = "Supprimer";
+            this.cmdSupprimerAeroport.UseVisualStyleBackColor = true;
+            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(135, 302);
@@ -133,10 +145,11 @@
             // 
             this.cmdAjouterAeroport.Location = new System.Drawing.Point(6, 302);
             this.cmdAjouterAeroport.Name = "cmdAjouterAeroport";
-            this.cmdAjouterAeroport.Size = new System.Drawing.Size(120, 23);
+            this.cmdAjouterAeroport.Size = new System.Drawing.Size(48, 23);
             this.cmdAjouterAeroport.TabIndex = 17;
-            this.cmdAjouterAeroport.Text = "Ajouter l\'aéroport";
+            this.cmdAjouterAeroport.Text = "Ajouter";
             this.cmdAjouterAeroport.UseVisualStyleBackColor = true;
+            this.cmdAjouterAeroport.Click += new System.EventHandler(this.cmdAjouterAeroport_Click);
             // 
             // etqMaxCargo
             // 
@@ -214,6 +227,7 @@
             this.cmdPositionAeroport.TabIndex = 5;
             this.cmdPositionAeroport.Text = "Position ...";
             this.cmdPositionAeroport.UseVisualStyleBackColor = true;
+            this.cmdPositionAeroport.Click += new System.EventHandler(this.cmdPositionAeroport_Click);
             // 
             // etqVilleAeroport
             // 
@@ -257,6 +271,7 @@
             // 
             // ongAeronef
             // 
+            this.ongAeronef.Controls.Add(this.button1);
             this.ongAeronef.Controls.Add(this.etqEntretienAeronef);
             this.ongAeronef.Controls.Add(this.selEntretienAeronef);
             this.ongAeronef.Controls.Add(this.etqDebarquementAeronef);
@@ -266,7 +281,7 @@
             this.ongAeronef.Controls.Add(this.etqVitesseAeronef);
             this.ongAeronef.Controls.Add(this.selVitesseAeronef);
             this.ongAeronef.Controls.Add(this.label1);
-            this.ongAeronef.Controls.Add(this.comboBox1);
+            this.ongAeronef.Controls.Add(this.cmbTypeAeronef);
             this.ongAeronef.Controls.Add(this.etqCapaciteAeronef);
             this.ongAeronef.Controls.Add(this.txtCapaciteAeronef);
             this.ongAeronef.Controls.Add(this.etqModeleAeronef);
@@ -280,6 +295,15 @@
             this.ongAeronef.TabIndex = 1;
             this.ongAeronef.Text = "Aéronefs";
             this.ongAeronef.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(60, 302);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(66, 23);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "Supprimer";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // etqEntretienAeronef
             // 
@@ -359,13 +383,13 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Type";
             // 
-            // comboBox1
+            // cmbTypeAeronef
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(182, 58);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 21);
-            this.comboBox1.TabIndex = 7;
+            this.cmbTypeAeronef.FormattingEnabled = true;
+            this.cmbTypeAeronef.Location = new System.Drawing.Point(182, 58);
+            this.cmbTypeAeronef.Name = "cmbTypeAeronef";
+            this.cmbTypeAeronef.Size = new System.Drawing.Size(100, 21);
+            this.cmbTypeAeronef.TabIndex = 7;
             // 
             // etqCapaciteAeronef
             // 
@@ -382,6 +406,7 @@
             this.txtCapaciteAeronef.Name = "txtCapaciteAeronef";
             this.txtCapaciteAeronef.Size = new System.Drawing.Size(100, 20);
             this.txtCapaciteAeronef.TabIndex = 5;
+            this.txtCapaciteAeronef.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCapaciteAeronef_KeyPress);
             // 
             // etqModeleAeronef
             // 
@@ -403,10 +428,11 @@
             // 
             this.cmdAjouterAeronef.Location = new System.Drawing.Point(6, 302);
             this.cmdAjouterAeronef.Name = "cmdAjouterAeronef";
-            this.cmdAjouterAeronef.Size = new System.Drawing.Size(120, 23);
+            this.cmdAjouterAeronef.Size = new System.Drawing.Size(48, 23);
             this.cmdAjouterAeronef.TabIndex = 1;
-            this.cmdAjouterAeronef.Text = "Ajouter l\'aéronef";
+            this.cmdAjouterAeronef.Text = "Ajouter";
             this.cmdAjouterAeronef.UseVisualStyleBackColor = true;
+            this.cmdAjouterAeronef.Click += new System.EventHandler(this.cmdAjouterAeronef_Click);
             // 
             // lstAeronef
             // 
@@ -454,6 +480,7 @@
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
             this.quitterToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.quitterToolStripMenuItem.Text = "Quitter";
+            this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
             // scénarioToolStripMenuItem
             // 
@@ -521,7 +548,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button cmdAjouterAeroport;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbTypeAeronef;
         private System.Windows.Forms.Label etqCapaciteAeronef;
         private System.Windows.Forms.TextBox txtCapaciteAeronef;
         private System.Windows.Forms.Label etqModeleAeronef;
@@ -542,5 +569,7 @@
         private System.Windows.Forms.ToolStripMenuItem quitterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem scénarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem réinitialiserLeScénarioToolStripMenuItem;
+        private System.Windows.Forms.Button cmdSupprimerAeroport;
+        private System.Windows.Forms.Button button1;
     }
 }
