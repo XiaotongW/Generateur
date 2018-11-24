@@ -15,6 +15,7 @@ x64/
 [Oo]bj/
 .vs/
 obj/
+bin/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
