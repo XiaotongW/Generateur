@@ -20,7 +20,7 @@ namespace Generateur
 
         public string ConvertirPosition() //converti la coordonnée cartésienne en coordonée gps
         {
-            string laPosition;
+            string laPosition="";
             
             int L = 0;//longeur de l'image
             int H = 0;//Hauteur de l'image
@@ -40,7 +40,7 @@ namespace Generateur
                     if (((Y - YM) % YM) != 0)
                     {
                         float restant = ((Y - YM) % YM);
-                        MinuteX = restant * 60;
+                        MinuteX = (int)restant * 60;
                     }
                     break;
                 case 'S':

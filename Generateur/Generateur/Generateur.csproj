@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Generateur.Generateur</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -60,12 +63,9 @@
     <Compile Include="ficheCarte.Designer.cs">
       <DependentUpon>ficheCarte.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="Position.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scenario.cs" />
-=======
     <Compile Include="ficheGenerateur.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,14 +73,12 @@
       <DependentUpon>ficheGenerateur.cs</DependentUpon>
     </Compile>
     <Compile Include="Generateur.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ficheCarte.resx">
       <DependentUpon>ficheCarte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ficheGenerateur.resx">
       <DependentUpon>ficheGenerateur.cs</DependentUpon>
     </EmbeddedResource>
->>>>>>> 5ab9fc238485d72104fef6f16dd677cb7e0cfec0
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
